@@ -1,0 +1,4 @@
+To join: PUT https://www.blooket.com/api/firebase/join, {id: "GAME_ID", name: "NAME"}
+To set score: PUT https://www.blooket.com/api/firebase/setval, {"path":"GAME_ID/c/NAME","val":{"b":"ANIMAL_PIC","g": AMOUNT}}
+To swap score: PUT https://www.blooket.com/api/firebase/setval, {"path":"GAME_ID/c/NAME","val":{"b":"ANIMAL_PIC","g": AMOUNT, at: "OTHER_PLAYER:ANIMAL_PIC:AMOUNT"}}
+To kick: DELETE https://www.blooket.com/api/firebase/client?id={GAME_ID}&name={NAME}
