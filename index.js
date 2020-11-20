@@ -27,16 +27,18 @@ $("#setValForm").submit(e => {
     const animalPic = $("#animalPic").val();
     const newScore = $("#newScore").val();
 
+    const data = {
+        path: `${gameId}/c/${name}`,
+        val: {
+            b: animalPic,
+            g: parseInt(newScore)
+        }
+    };
+
     $.ajax({
         url: SET_VAL_URL,
         type: "PUT",
-        data: {
-            path: `${gameId}/c/${name}`,
-            val: {
-                b: animalPic,
-                g: parseInt(newScore)
-            }
-        },
+        data: JSON.stringify(data),
         dataType: "json",
         contentType: "application/json",
         success: () => console.log("Set score successfully"),
