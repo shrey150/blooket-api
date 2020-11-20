@@ -34,9 +34,11 @@ $("#setValForm").submit(e => {
             path: `${gameId}/c/${name}`,
             val: {
                 b: animalPic,
-                g: newScore
+                g: parseInt(newScore)
             }
         },
+        dataType: "json",
+        contentType: "application/json",
         success: () => console.log("Set score successfully"),
     });
 
